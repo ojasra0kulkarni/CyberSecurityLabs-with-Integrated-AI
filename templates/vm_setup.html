@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>VM Setup Guide</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>VM Setup Instructions</h1>
+
+    <h2>🟥 Red Team (Kali Linux)</h2>
+    <ul>
+        <li>Download Kali ISO from official site</li>
+        <li>Create VM in VirtualBox, allocate 2GB RAM</li>
+        <li>Attach ISO and install Kali</li>
+        <li>Set network adapter to Host-only</li>
+    </ul>
+
+    <h2>🟦 Blue Team (Ubuntu)</h2>
+    <ul>
+        <li>Download Ubuntu Desktop (22.04 or 24.04)</li>
+        <li>Create VM in VirtualBox, allocate 2GB RAM</li>
+        <li>Set up basic services like UFW, Fail2Ban, Wireshark</li>
+        <li>Install tools like Logwatch or OSSEC</li>
+    </ul>
+
+    <h2>🪓 Victim (Metasploitable2)</h2>
+    <ul>
+        <li>Download OVA from trusted GitHub archives</li>
+        <li>Import into VirtualBox</li>
+        <li>Use Host-only Adapter</li>
+        <li>Check IP using `ifconfig` or `ip a`</li>
+    </ul>
+
+    <h2>📡 Connect the Network</h2>
+    <ul>
+        <li>All machines should be on Host-only adapter like `vboxnet0`</li>
+        <li>Ping across VMs to test connectivity</li>
+    </ul>
+
+    <br><a href="{{ url_for('entry') }}">← Back to Entry</a>
+</body>
+</html>

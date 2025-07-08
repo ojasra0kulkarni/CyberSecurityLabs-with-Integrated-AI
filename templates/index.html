@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Red Team vs Blue Team Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #d32f2f;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        input[type=text] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 250px;
+        }
+        button {
+            background-color: #1976d2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+        h2 {
+            color: #555;
+            border-bottom: 2px solid #1976d2;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 10px auto 0 auto;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        li {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        li:last-child {
+            border-bottom: none;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #1976d2;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Red vs Blue Dashboard</h1>
+
+    <form action="/attack" method="POST">
+        <input type="text" name="attack" placeholder="Red Team Attack"/>
+        <button type="submit">Launch Attack</button>
+    </form>
+
+    <form action="/defend" method="POST">
+        <input type="text" name="defense" placeholder="Blue Team Defense"/>
+        <button type="submit">Deploy Defense</button>
+    </form>
+
+    <h2>🛑 Attack Log</h2>
+    <ul>
+        {% for log in attack_log %}
+        <li>{{ log.time }} — {{ log.event }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>🛡️ Defense Log</h2>
+    <ul>
+        {% for log in defense_log %}
+        <li>{{ log.time }} — {{ log.event }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('entry') }}">← Back to Entry</a>
+</body>
+</html>

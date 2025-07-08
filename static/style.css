@@ -1,0 +1,85 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fdf6e3; /* Cream */
+    color: #2c2c2c;
+    padding: 40px;
+    line-height: 1.8;
+}
+
+/* Headings */
+h1 {
+    font-size: 2.5em;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 2px solid #888;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #2e4a62;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-left: 5px solid #888;
+    padding-left: 10px;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Paragraphs & Lists */
+p, li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+
+ul, ol {
+    margin-left: 30px;
+    margin-bottom: 20px;
+}
+
+/* Code Blocks */
+code {
+    background-color: #eee;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: Consolas, monospace;
+    color: #c7254e;
+    font-size: 0.95em;
+}
+
+pre {
+    background-color: #272822;
+    color: #f8f8f2;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 50px;
+}
+
+/* Links */
+a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
