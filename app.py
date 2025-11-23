@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import datetime
-from tools import redblue  # Removed encryption import
+from tools import redblue  # Removed encryption 
 
 app = Flask(__name__)
 
